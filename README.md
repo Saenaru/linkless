@@ -5,8 +5,9 @@
 ### Как установить
 
 
-Python3 должен быть уже установлен. 
-Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
+1.Python3 должен быть уже установлен. 
+2.Получить [сервисный токен приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/tokens/service-token). А затем создать файл .env и прописать токен в него. 
+3.Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
 ```
 pip install requests
 pip install python-dotenv
