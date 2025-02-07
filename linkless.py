@@ -19,7 +19,8 @@ def shorten_link(token, url):
 
 def count_clicks(token, short_url):
     stats_url = "https://api.vk.com/method/utils.getLinkStats"
-    key = short_url.split('/')[-1]
+    parsed_url = urlparse(short_url)
+    key = parsed_url.path.lstrip('/').split('/')[-1]
     params = {
         "access_token": token,
         "key": key,
@@ -36,7 +37,19 @@ def count_clicks(token, short_url):
 
 
 def is_short_link(token, url):
-    return urlparse(url).netloc == "vk.cc"
+    parsed_url = urlparse(url)
+    key = parsed_url.path.lstrip('/').split('/')[-1]
+    stats_url = "https://api.vk.com/method/utils.getLinkStats"
+    params = {
+        "access_token": token,
+        "key": key,
+        "v": "5.199",
+    }
+
+    response = requests.get(stats_url, params=params)
+    response.raise_for_status()
+    data = response.json()
+    return "response" in data and "stats" in data["response"]
 
 
 def main():
@@ -48,8 +61,6 @@ def main():
             clicks = count_clicks(token, user_url)
             print('Количество кликов по ссылке: ', clicks)
         else:
-            response = requests.get(user_url)
-            response.raise_for_status()
             short_link = shorten_link(token, user_url)
             print('Сокращённая ссылка: ', short_link)
     except requests.exceptions.HTTPError as error:
