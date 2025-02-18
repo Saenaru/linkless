@@ -21,7 +21,9 @@ pip install psycopg2-binary==2.9.*
 
 # Shortening links and calculating clicks.
 
-The script shortens links via the vk.cc interface and calculates click statistics.
+### Connecting to the database
+### Sent several requests
+### Displaying data on the site
 
 ## How to install
 
