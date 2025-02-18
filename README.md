@@ -1,17 +1,16 @@
-# Пульт охраны банка
+# Сокращение ссылок и рассчёт кликов.
 
-### Подключаемся к базе данных
-### Отправляем несколько запросов
-### Выводим данные на сайте
+Скрипт сокращает ссылки через интерфейс vk.cc и считает статистику кликов.
 
 ## Как установить
 
 
-### 1. Python3 должен быть уже установлен. 
-### 2. Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
+### 1.Python3 должен быть уже установлен. 
+### 2.Получить [сервисный токен приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/tokens/service-token). А затем создать файл .env и прописать токен в него. 
+### 3.Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
 ```
-pip install django==3.2.*
-pip install psycopg2-binary==2.9.*
+pip install requests
+pip install python-dotenv
 ```
 
 ## Цель проекта
@@ -21,9 +20,7 @@ pip install psycopg2-binary==2.9.*
 
 # Shortening links and calculating clicks.
 
-### Connecting to the database
-### Sent several requests
-### Displaying data on the site
+The script shortens links via the vk.cc interface and calculates click statistics.
 
 ## How to install
 
