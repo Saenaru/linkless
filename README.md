@@ -15,7 +15,9 @@
 
 
 1.Python3 должен быть уже установлен. 
+
 2.Получить [сервисный токен приложения](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/tokens/service-token).
+
 3.Это приложение использует файл .env для хранения конфиденциальных и конфигурируемых параметров настройки.
 
 В корневом каталоге проекта создайте файл «token.env», и укажите токен приложения в формате КЛЮЧ=значение. Пример:
@@ -52,7 +54,9 @@ The script shortens links via the vk.cc interface and calculates click statistic
 
 
 1.Python3 should already be installed.
+
 2.Get [application service token](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/tokens/service-token).
+
 3.This application uses an .env file to store sensitive and configurable settings.
 
 In the root directory of the project, create a file “token.env”, and specify the application token in the KEY=value format. Example:
